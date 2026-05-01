@@ -194,7 +194,7 @@ export const TaskDetails = () => {
   const isCreator = user?.id === task.creator_id;
 
   return (
-    <div className="max-w-4xl mx-auto pb-12 relative">
+    <div className="max-w-4xl mx-auto pb-12 relative px-4 sm:px-0">
       {toast && (
         <div className={`fixed top-24 right-8 z-50 flex items-center gap-2 px-4 py-3 rounded-xl shadow-lg border text-sm font-medium animate-in fade-in slide-in-from-top-2 ${toast.type === 'success' ? 'bg-green-50 border-green-200 text-green-800' : 'bg-red-50 border-red-200 text-red-800'}`}>
           {toast.type === 'success' ? <CheckCircle className="w-5 h-5 text-green-600" /> : <XCircle className="w-5 h-5 text-red-600" />}
@@ -207,7 +207,7 @@ export const TaskDetails = () => {
       </Link>
 
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden mb-8">
-        <div className="p-8 border-b border-gray-100">
+        <div className="p-4 sm:p-8 border-b border-gray-100">
           <div className="flex flex-wrap items-center justify-between mb-4 gap-4">
             <div className="flex flex-wrap items-center gap-2">
               <span className="bg-purple-50 text-purple-600 px-3 py-1 text-xs font-bold tracking-wider uppercase rounded-full">
@@ -268,7 +268,7 @@ export const TaskDetails = () => {
           </div>
         </div>
 
-        <div className="p-8 bg-gray-50 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="p-4 sm:p-8 bg-gray-50 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             {task.profiles?.avatar_url ? (
                <img src={task.profiles.avatar_url} alt="avatar" className="w-14 h-14 rounded-full object-cover" />
@@ -320,7 +320,7 @@ export const TaskDetails = () => {
           ) : (
             <div className="space-y-4">
               {applications.map(app => (
-                <div key={app.id} className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm flex items-center justify-between">
+                <div key={app.id} className="bg-white rounded-xl p-4 sm:p-6 border border-gray-100 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   <div className="flex items-center gap-4">
                     {app.profiles?.avatar_url ? (
                       <img src={app.profiles.avatar_url} alt="avatar" className="w-12 h-12 rounded-full object-cover" />

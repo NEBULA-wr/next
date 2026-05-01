@@ -47,10 +47,10 @@ export const MyApplications = () => {
         <div className="space-y-4">
           {applications.map(app => (
             <Link to={`/task/${app.task_id}`} key={app.id} className="block">
-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div>
-                    <div className="flex items-center gap-3 mb-2">
+                    <div className="flex flex-wrap items-center gap-3 mb-2">
                        {app.status === 'pending' && <span className="bg-yellow-100 text-yellow-700 px-3 py-1 text-xs font-bold rounded-full">Pendiente</span>}
                        {app.status === 'accepted' && <span className="bg-green-100 text-green-700 px-3 py-1 text-xs font-bold rounded-full">Aceptado</span>}
                        {app.status === 'rejected' && <span className="bg-red-100 text-red-700 px-3 py-1 text-xs font-bold rounded-full">Rechazado</span>}
@@ -64,7 +64,7 @@ export const MyApplications = () => {
                         </span>
                       )}
                     </h3>
-                    <div className="flex items-center gap-4 mt-2 text-sm text-gray-600">
+                    <div className="flex flex-wrap items-center gap-4 mt-2 text-sm text-gray-600">
                       <span className="flex items-center gap-1"><MapPin className="w-4 h-4" /> {app.tasks.location}</span>
                       <span className="flex items-center gap-1 text-brand-primary font-semibold"><Briefcase className="w-4 h-4" /> {app.tasks.price}</span>
                     </div>

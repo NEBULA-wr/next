@@ -52,7 +52,7 @@ export const PublishTask = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
+    <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-sm border border-gray-100 p-4 sm:p-8">
       <h1 className="text-2xl font-bold text-gray-900 mb-2">Publicar una tarea nueva</h1>
       <p className="text-sm text-gray-500 mb-8">Describe lo que necesitas y cuánto estás dispuesto a pagar.</p>
       

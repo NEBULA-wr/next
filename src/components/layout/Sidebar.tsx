@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { 
   Home, Search, Briefcase, ClipboardList, 
   Bookmark, HelpCircle, Headphones,
-  Plus
+  Plus, X
 } from 'lucide-react';
 import { cn } from '../../lib/utils';
 
@@ -15,24 +15,44 @@ const navItems = [
   { icon: Bookmark, label: 'Guardados', path: '/saved' },
 ];
 
-export const Sidebar = () => {
+export const Sidebar = ({ isOpen, setIsOpen }: { isOpen?: boolean, setIsOpen?: (v: boolean) => void }) => {
   return (
-    <aside className="fixed left-0 top-0 h-screen w-64 bg-brand-sidebar text-white flex flex-col p-4 z-20">
-      {/* Logo */}
-      <div className="flex items-center gap-3 px-2 mb-8 mt-2">
-        <div className="bg-brand-primary p-1.5 rounded-lg flex items-center justify-center shadow-lg">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 19L11 5H18L11 19H4Z" fill="white"/>
-            <path d="M20 19L13 5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
+    <>
+      {/* Mobile Overlay */}
+      {isOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          onClick={() => setIsOpen?.(false)}
+        />
+      )}
+      
+      <aside className={cn(
+        "fixed left-0 top-0 h-screen w-64 bg-brand-sidebar text-white flex flex-col p-4 z-50 transition-transform duration-300",
+        isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
+      )}>
+        {/* Logo and Mobile Close Button */}
+        <div className="flex items-center justify-between mb-8 mt-2 px-2">
+          <div className="flex items-center gap-3">
+            <div className="bg-brand-primary p-1.5 rounded-lg flex items-center justify-center shadow-lg">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 19L11 5H18L11 19H4Z" fill="white"/>
+                <path d="M20 19L13 5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <h1 className="text-xl font-bold leading-tight">School<span className="text-brand-primary">Tasker</span></h1>
+              <p className="text-xs text-gray-400">Tu ayuda académica</p>
+            </div>
+          </div>
+          <button 
+            className="lg:hidden p-1 text-gray-400 hover:text-white"
+            onClick={() => setIsOpen?.(false)}
+          >
+            <X className="w-6 h-6" />
+          </button>
         </div>
-        <div>
-          <h1 className="text-xl font-bold leading-tight">Next<span className="text-brand-primary">Step</span></h1>
-          <p className="text-xs text-gray-400">Tu ayuda académica</p>
-        </div>
-      </div>
 
-      {/* Navigation */}
+        {/* Navigation */}
       <nav className="flex-1 space-y-1">
         {navItems.map((item) => (
           <NavLink
@@ -114,5 +134,6 @@ export const Sidebar = () => {
         </div>
       </div>
     </aside>
+    </>
   );
 };

@@ -88,8 +88,8 @@ export const Explorer = () => {
         </div>
       </div>
 
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-8">
-        <form onSubmit={handleSearch} className="flex gap-4">
+      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 sm:p-6 mb-8">
+        <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-4">
           <input 
             type="text" 
             placeholder="Buscar por palabra clave..."
@@ -97,12 +97,12 @@ export const Explorer = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
             className="flex-1 px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary"
           />
-          <button type="submit" className="bg-brand-primary hover:bg-brand-primary-hover text-white px-6 py-2.5 rounded-xl font-medium transition-colors">
+          <button type="submit" className="bg-brand-primary hover:bg-brand-primary-hover text-white px-6 py-2.5 rounded-xl font-medium transition-colors w-full sm:w-auto">
             Buscar
           </button>
         </form>
 
-        <div className="flex gap-2 mt-4 overflow-x-auto pb-2">
+        <div className="flex gap-2 mt-4 overflow-x-auto pb-2 scrollbar-hide">
           {categories.map(cat => (
             <button
               key={cat.id}

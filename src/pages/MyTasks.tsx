@@ -39,7 +39,7 @@ export const MyTasks = () => {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="flex items-center justify-between mb-8">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4">
         <h1 className="text-2xl font-bold text-gray-900">Mis Tareas Publicadas</h1>
         <Link to="/publish" className="bg-brand-primary hover:bg-brand-primary-hover text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
           Publicar Nueva Tarea
@@ -52,7 +52,7 @@ export const MyTasks = () => {
         <div className="space-y-4">
           {tasks.map(task => (
             <Link to={`/task/${task.id}`} key={task.id} className="block group">
-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div>
                     <h3 className="text-lg font-bold text-gray-900 group-hover:text-brand-primary transition-colors flex items-center gap-2">
@@ -63,10 +63,10 @@ export const MyTasks = () => {
                         </span>
                       )}
                     </h3>
-                    <div className="flex items-center gap-4 mt-2 text-sm text-gray-600">
+                    <div className="flex flex-wrap items-center gap-4 mt-2 text-sm text-gray-600">
                       <span className="flex items-center gap-1"><MapPin className="w-4 h-4" /> {task.location}</span>
                       <span className="flex items-center gap-1 font-semibold"><Briefcase className="w-4 h-4" /> {task.price}</span>
-                      <span className="text-gray-400">Publicado {formatDistanceToNow(new Date(task.created_at), { addSuffix: true, locale: es })}</span>
+                      <span className="text-gray-400 block sm:inline">Publicado {formatDistanceToNow(new Date(task.created_at), { addSuffix: true, locale: es })}</span>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">

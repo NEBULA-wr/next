@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Search, Bell, ChevronDown, User as UserIcon, LogOut, Check } from 'lucide-react';
+import { Search, Bell, ChevronDown, User as UserIcon, LogOut, Check, Menu } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
 import { supabase } from '../../lib/supabase';
 import { Link, useNavigate } from 'react-router-dom';
 import { formatDistanceToNow } from 'date-fns';
 import { es } from 'date-fns/locale';
 
-export const Header = () => {
+export const Header = ({ onMenuClick }: { onMenuClick?: () => void }) => {
   const { user, profile } = useAuth();
   const navigate = useNavigate();
   const [showDropdown, setShowDropdown] = useState(false);
@@ -70,23 +70,40 @@ export const Header = () => {
   };
 
   return (
-    <header className="h-20 bg-brand-bg px-8 flex items-center justify-between z-50 sticky top-0">
-      <div className="flex-1 max-w-2xl">
-        <form onSubmit={handleSearch} className="relative">
-          <button type="submit" className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-brand-primary">
-            <Search className="w-5 h-5" />
-          </button>
-          <input 
-            type="text" 
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder="Busca tareas, maquetas o palabras clave..." 
-            className="w-full h-12 pl-12 pr-4 rounded-full bg-white border border-gray-200 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary text-sm shadow-sm"
-          />
-        </form>
+    <header className="h-20 bg-brand-bg px-4 sm:px-8 flex items-center justify-between z-50 sticky top-0">
+      <div className="flex items-center flex-1 gap-4">
+        <button 
+          onClick={onMenuClick}
+          className="lg:hidden p-2 text-gray-600 hover:text-brand-primary"
+        >
+          <Menu className="w-6 h-6" />
+        </button>
+        <div className="flex-1 max-w-2xl hidden sm:block">
+          <form onSubmit={handleSearch} className="relative">
+            <button type="submit" className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-brand-primary">
+              <Search className="w-5 h-5" />
+            </button>
+            <input 
+              type="text" 
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Busca tareas, maquetas o palabras clave..." 
+              className="w-full h-12 pl-12 pr-4 rounded-full bg-white border border-gray-200 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary text-sm shadow-sm"
+            />
+          </form>
+        </div>
       </div>
 
-      <div className="flex items-center gap-6 ml-4 relative">
+      <div className="flex items-center gap-2 sm:gap-6 ml-4 relative">
+        <button 
+          className="sm:hidden p-2 text-gray-600 hover:text-brand-primary"
+          onClick={() => {
+             // We can implement mobile search here later, for now we will just link to explorer
+             navigate('/explorer');
+          }}
+        >
+          <Search className="w-5 h-5" />
+        </button>
         <div className="relative">
           <button 
             onClick={() => setShowNotifications(!showNotifications)}
