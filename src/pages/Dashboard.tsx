@@ -194,50 +194,53 @@ export const Dashboard = () => {
       <div className="flex-1 space-y-8 max-w-5xl">
         
         {/* Hero */}
-        <div className="relative">
-          <p className="text-sm font-semibold tracking-wider text-brand-primary uppercase mb-2">Bienvenido a SchoolTasker</p>
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight leading-[1.1] mb-6">
-            Conectamos estudiantes<br />con <span className="text-brand-primary">soluciones rápidas</span>
-          </h1>
-          <p className="text-gray-600 max-w-xl text-sm sm:text-base mb-10 leading-relaxed">
-            Plataforma de conexión académica. Encuentra ayuda para tus maquetas, resúmenes o proyectos, o gana dinero ayudando a otros.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 mb-2">
-            <button 
-              onClick={() => navigate('/explorer')}
-              className="flex-1 bg-brand-sidebar hover:bg-[#1a1e36] text-white rounded-2xl p-6 text-left transition-all group shadow-sm flex items-center justify-between"
-            >
-              <div>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="bg-white/10 p-2 rounded-full"><Search className="w-5 h-5" /></div>
-                  <span className="text-xs font-bold tracking-wider text-gray-300">QUIERO TRABAJAR</span>
-                </div>
-                <h3 className="text-xl font-bold mb-1">Buscar tareas</h3>
-                <p className="text-sm text-gray-400">Explora trabajos escolares que puedes realizar por un pago.</p>
-              </div>
-              <ArrowRight className="w-6 h-6 text-gray-500 group-hover:text-white transition-colors group-hover:translate-x-1" />
-            </button>
+        <div className="relative flex flex-col xl:flex-row gap-8 items-center xl:items-start justify-between">
+          <div className="flex-1 w-full xl:pr-8">
+            <p className="text-sm font-semibold tracking-wider text-brand-primary uppercase mb-2">Bienvenido a SchoolTasker</p>
+            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight leading-[1.1] mb-6">
+              Conectamos estudiantes<br />con <span className="text-brand-primary">soluciones rápidas</span>
+            </h1>
+            <p className="text-gray-600 max-w-xl text-sm sm:text-base mb-10 leading-relaxed">
+              Plataforma de conexión académica. Encuentra ayuda para tus maquetas, resúmenes o proyectos, o gana dinero ayudando a otros.
+            </p>
             
-            <button 
-              onClick={() => navigate('/publish')}
-              className="flex-1 bg-white hover:bg-gray-50 border border-gray-200 text-gray-900 rounded-2xl p-6 text-left transition-all group shadow-sm flex items-center justify-between"
-            >
-              <div>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="bg-brand-primary/10 p-2 rounded-full"><Plus className="w-5 h-5 text-brand-primary" /></div>
-                  <span className="text-xs font-bold tracking-wider text-brand-primary">NECESITO AYUDA</span>
+            <div className="flex flex-col sm:flex-row gap-4 mb-2">
+              <button 
+                onClick={() => navigate('/explorer')}
+                className="flex-1 bg-brand-sidebar hover:bg-[#1a1e36] text-white rounded-2xl p-6 text-left transition-all group shadow-sm flex items-center justify-between"
+              >
+                <div>
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="bg-white/10 p-2 rounded-full"><Search className="w-5 h-5" /></div>
+                    <span className="text-xs font-bold tracking-wider text-gray-300">QUIERO TRABAJAR</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-1">Buscar tareas</h3>
+                  <p className="text-sm text-gray-400">Explora trabajos escolares que puedes realizar por un pago.</p>
                 </div>
-                <h3 className="text-xl font-bold mb-1">Publicar tarea</h3>
-                <p className="text-sm text-gray-500">Sube lo que necesitas y un compañero lo hará por ti.</p>
-              </div>
-              <ArrowRight className="w-6 h-6 text-brand-primary transition-transform group-hover:translate-x-1" />
-            </button>
+                <ArrowRight className="w-6 h-6 text-gray-500 group-hover:text-white transition-colors group-hover:translate-x-1" />
+              </button>
+              
+              <button 
+                onClick={() => navigate('/publish')}
+                className="flex-1 bg-white hover:bg-gray-50 border border-gray-200 text-gray-900 rounded-2xl p-6 text-left transition-all group shadow-sm flex items-center justify-between"
+              >
+                <div>
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="bg-brand-primary/10 p-2 rounded-full"><Plus className="w-5 h-5 text-brand-primary" /></div>
+                    <span className="text-xs font-bold tracking-wider text-brand-primary">NECESITO AYUDA</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-1">Publicar tarea</h3>
+                  <p className="text-sm text-gray-500">Sube lo que necesitas y un compañero lo hará por ti.</p>
+                </div>
+                <ArrowRight className="w-6 h-6 text-brand-primary transition-transform group-hover:translate-x-1" />
+              </button>
+            </div>
           </div>
           
-          {/* Decorative image placeholder to match the reference */}
-          <div className="hidden lg:block absolute right-0 top-0 w-80 h-80 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-100 via-transparent to-transparent -z-10 pointer-events-none translate-x-20 -translate-y-10 rounded-full blur-3xl opacity-60"></div>
-          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80" alt="Students studying" className="hidden lg:block absolute right-0 top-0 w-80 h-72 object-cover rounded-[2rem] shadow-xl mask-image-circle z-0 border-8 border-white object-top" style={{ clipPath: 'circle(50% at 50% 50%)' }} />
+          <div className="hidden lg:block relative flex-shrink-0">
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-100 via-transparent to-transparent -z-10 blur-3xl opacity-60"></div>
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80" alt="Students studying" className="w-72 h-72 object-cover rounded-[2rem] shadow-xl mask-image-circle z-0 border-8 border-white object-top" style={{ clipPath: 'circle(50% at 50% 50%)' }} />
+          </div>
         </div>
 
         {/* Featured Opportunities */}
