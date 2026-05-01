@@ -70,7 +70,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="h-20 bg-brand-bg px-8 flex items-center justify-between z-10 sticky top-0">
+    <header className="h-20 bg-brand-bg px-8 flex items-center justify-between z-50 sticky top-0">
       <div className="flex-1 max-w-2xl">
         <form onSubmit={handleSearch} className="relative">
           <button type="submit" className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-brand-primary">
