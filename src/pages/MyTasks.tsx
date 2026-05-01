@@ -40,9 +40,9 @@ export const MyTasks = () => {
   return (
     <div className="max-w-4xl mx-auto">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4">
-        <h1 className="text-2xl font-bold text-gray-900">Mis Tareas Publicadas</h1>
-        <Link to="/publish" className="bg-brand-primary hover:bg-brand-primary-hover text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
-          Publicar Nueva Tarea
+        <h1 className="text-2xl font-bold text-gray-900">Mis Publicaciones</h1>
+        <Link to="/publish?type=TAREA" className="bg-brand-primary hover:bg-brand-primary-hover text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+          Publicar Nueva
         </Link>
       </div>
 
@@ -83,7 +83,7 @@ export const MyTasks = () => {
         </div>
       ) : (
         <div className="text-center py-20 bg-white border border-gray-100 rounded-2xl">
-          <p className="text-gray-500 mb-4">No has publicado ninguna tarea aún.</p>
+          <p className="text-gray-500 mb-4">No has realizado ninguna publicación aún.</p>
           <Link to="/publish" className="text-brand-primary font-medium hover:underline">Comenzar ahora</Link>
         </div>
       )}

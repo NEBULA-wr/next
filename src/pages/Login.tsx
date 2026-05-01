@@ -54,7 +54,7 @@ export const Login = () => {
             {isLogin ? 'Iniciar Sesión' : 'Crear Cuenta'}
           </h1>
           <p className="text-sm text-gray-500 mt-2">
-             Ingresa a SchoolTasker para conectar con otros estudiantes.
+             Ingresa a NextStep para conectar con más oportunidades.
           </p>
         </div>
 

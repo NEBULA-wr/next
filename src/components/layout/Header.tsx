@@ -87,7 +87,7 @@ export const Header = ({ onMenuClick }: { onMenuClick?: () => void }) => {
               type="text" 
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Busca tareas, maquetas o palabras clave..." 
+              placeholder="Busca oportunidades, becas o palabras clave..." 
               className="w-full h-12 pl-12 pr-4 rounded-full bg-white border border-gray-200 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary text-sm shadow-sm"
             />
           </form>

@@ -29,7 +29,7 @@
 
     return (
       <div className="bg-[#0f1225] rounded-2xl p-6 text-white text-sm">
-        <h3 className="text-lg font-bold mb-1">Impacto SchoolTasker</h3>
+        <h3 className="text-lg font-bold mb-1">Impacto NextStep</h3>
         <p className="text-gray-400 mb-6">Crecemos juntos cada día</p>
         
         <div className="space-y-6">
@@ -37,7 +37,7 @@
             <div className="bg-white/10 p-2.5 rounded-lg"><Briefcase className="w-5 h-5 text-blue-400" /></div>
             <div>
               <p className="text-lg font-bold">{stats.tasks}</p>
-              <p className="text-gray-400 text-xs">Tareas publicadas</p>
+              <p className="text-gray-400 text-xs">Publicaciones creadas</p>
             </div>
           </div>
           <div className="flex items-center gap-4">
@@ -51,7 +51,7 @@
             <div className="bg-white/10 p-2.5 rounded-lg"><LayoutDashboard className="w-5 h-5 text-gray-400" /></div>
             <div>
               <p className="text-lg font-bold">{stats.completed}</p>
-              <p className="text-gray-400 text-xs">Tareas completadas</p>
+              <p className="text-gray-400 text-xs">Proyectos completados</p>
             </div>
           </div>
         </div>
@@ -196,7 +196,7 @@
           {/* Hero */}
           <div className="relative flex flex-col xl:flex-row gap-8 items-center xl:items-start justify-between">
             <div className="flex-1 w-full xl:max-w-2xl">
-              <p className="text-sm font-semibold tracking-wider text-brand-primary uppercase mb-2">Bienvenido a SchoolTasker</p>
+              <p className="text-sm font-semibold tracking-wider text-brand-primary uppercase mb-2">Bienvenido a NextStep</p>
               <h1 className="text-3xl sm:text-4xl lg:text-3xl xl:text-4xl font-bold text-gray-900 tracking-tight leading-[1.1] mb-6">
                 Conectamos estudiantes <br className="hidden sm:block" /> con <span className="text-brand-primary">soluciones rápidas</span>
               </h1>
@@ -215,8 +215,8 @@
                       <ArrowRight className="w-5 h-5 text-gray-500 group-hover:text-white transition-colors group-hover:translate-x-1" />
                     </div>
                     <span className="text-[10px] font-bold tracking-wider text-gray-300 mb-1 block">QUIERO TRABAJAR</span>
-                    <h3 className="text-lg font-bold mb-1">Buscar tareas</h3>
-                    <p className="text-xs text-gray-400">Explora trabajos escolares para realizar.</p>
+                    <h3 className="text-lg font-bold mb-1">Buscar oportunidades</h3>
+                    <p className="text-xs text-gray-400">Explora ofertas para aplicar.</p>
                   </div>
                 </button>
                 
@@ -229,9 +229,9 @@
                       <div className="bg-brand-primary/10 p-2 rounded-full"><Plus className="w-5 h-5 text-brand-primary" /></div>
                       <ArrowRight className="w-5 h-5 text-brand-primary transition-transform group-hover:translate-x-1" />
                     </div>
-                    <span className="text-[10px] font-bold tracking-wider text-brand-primary mb-1 block">NECESITO AYUDA</span>
-                    <h3 className="text-lg font-bold mb-1">Publicar tarea</h3>
-                    <p className="text-xs text-gray-500">Un compañero lo hará por ti.</p>
+                    <span className="text-[10px] font-bold tracking-wider text-brand-primary mb-1 block">NUEVA OPORTUNIDAD</span>
+                    <h3 className="text-lg font-bold mb-1">Publicar oferta</h3>
+                    <p className="text-xs text-gray-500">Publica proyectos o becas y conecta con otros.</p>
                   </div>
                 </button>
               </div>
@@ -246,7 +246,7 @@
           {/* Featured Opportunities */}
           <div>
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-bold text-gray-900">Tareas recientes</h2>
+              <h2 className="text-xl font-bold text-gray-900">Publicaciones recientes</h2>
               <Link to="/explorer" className="flex items-center gap-2 text-sm text-brand-primary font-medium hover:text-brand-primary-hover">
                 Ver todas <ArrowRight className="w-4 h-4" />
               </Link>
@@ -272,7 +272,7 @@
           <div>
             <h2 className="text-lg font-bold text-gray-900 mb-4">Explora por categoría</h2>
             <div className="grid grid-cols-3 md:grid-cols-7 gap-4">
-              {['Resúmenes', 'Maquetas', 'Tutorías', 'Ensayos', 'Diseño', 'Programación', 'Ver más'].map((cat, i) => (
+              {['Becas', 'Proyectos', 'Tareas', 'Tutorías', 'Ensayos', 'Programación', 'Ver más'].map((cat, i) => (
                   <Link 
                     key={i} 
                     to={cat === 'Ver más' ? '/explorer' : `/explorer?category=${encodeURIComponent(cat.substring(0, 7).toLowerCase())}`} 

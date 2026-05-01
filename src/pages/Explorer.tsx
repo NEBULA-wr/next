@@ -53,10 +53,12 @@ export const Explorer = () => {
 
   const categories = [
     { id: 'all', label: 'Todas' },
+    { id: 'beca', label: 'Becas' },
+    { id: 'proyecto', label: 'Proyectos' },
+    { id: 'tarea', label: 'Tareas' },
     { id: 'maqueta', label: 'Maquetas' },
     { id: 'escritura', label: 'Escritura' },
     { id: 'tutoría', label: 'Tutorías' },
-    { id: 'proyecto', label: 'Proyectos' },
   ];
 
   const handleSearch = (e: React.FormEvent) => {
@@ -83,7 +85,7 @@ export const Explorer = () => {
     <div className="max-w-5xl mx-auto">
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">Explorar Tareas</h1>
+          <h1 className="text-2xl font-bold text-gray-900 mb-2">Explorar Oportunidades</h1>
           <p className="text-gray-500">Encuentra oportunidades para ayudar y ganar dinero</p>
         </div>
       </div>
@@ -184,9 +186,9 @@ export const Explorer = () => {
       ) : (
         <div className="text-center py-20 bg-white border border-gray-100 rounded-2xl">
           <Filter className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-          <h3 className="text-lg font-bold text-gray-900 mb-2">No se encontraron tareas</h3>
+          <h3 className="text-lg font-bold text-gray-900 mb-2">No se encontraron oportunidades</h3>
           <p className="text-gray-500 max-w-sm mx-auto">
-            No hay tareas publicadas que coincidan con tu búsqueda en este momento.
+            No hay oportunidades publicadas que coincidan con tu búsqueda en este momento.
           </p>
           <button 
             onClick={() => {

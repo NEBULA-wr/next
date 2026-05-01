@@ -40,7 +40,7 @@ export const Sidebar = ({ isOpen, setIsOpen }: { isOpen?: boolean, setIsOpen?: (
               </svg>
             </div>
             <div>
-              <h1 className="text-xl font-bold leading-tight">School<span className="text-brand-primary">Tasker</span></h1>
+              <h1 className="text-xl font-bold leading-tight">Next<span className="text-brand-primary">Step</span></h1>
               <p className="text-xs text-gray-400">Tu ayuda académica</p>
             </div>
           </div>
@@ -73,8 +73,9 @@ export const Sidebar = ({ isOpen, setIsOpen }: { isOpen?: boolean, setIsOpen?: (
         ))}
         
         <div className="pt-4 mt-4 border-t border-white/10">
+          <p className="px-4 text-[10px] font-bold text-gray-400 mb-2 uppercase tracking-widest mt-2">Crear Nueva</p>
            <NavLink
-            to="/publish"
+            to="/publish?type=TAREA"
             className={({ isActive }) =>
               cn(
                 "flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium transition-colors text-gray-400 hover:text-white hover:bg-white/5",
@@ -84,10 +85,40 @@ export const Sidebar = ({ isOpen, setIsOpen }: { isOpen?: boolean, setIsOpen?: (
           >
             <div className="flex items-center gap-3">
               <Plus className="w-5 h-5" />
-              Publicar tarea
+              Publicar Tarea
             </div>
             <span className="bg-brand-primary text-[10px] px-2 py-0.5 rounded-full text-white font-bold tracking-wide">Nuevo</span>
           </NavLink>
+           <NavLink
+            to="/publish?type=BECA"
+            className={({ isActive }) =>
+              cn(
+                "flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium transition-colors text-gray-400 hover:text-white hover:bg-white/5",
+                isActive && "bg-white/5 text-white"
+              )
+            }
+          >
+            <div className="flex items-center gap-3">
+              <Plus className="w-5 h-5" />
+              Publicar Beca
+            </div>
+          </NavLink>
+           <NavLink
+            to="/publish?type=PROYECTO"
+            className={({ isActive }) =>
+              cn(
+                "flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium transition-colors text-gray-400 hover:text-white hover:bg-white/5",
+                isActive && "bg-white/5 text-white"
+              )
+            }
+          >
+            <div className="flex items-center gap-3">
+              <Plus className="w-5 h-5" />
+              Publicar Proyecto
+            </div>
+          </NavLink>
+        </div>
+        <div className="pt-4 mt-4 border-t border-white/10">
            <NavLink
             to="/resources"
             className={({ isActive }) =>
@@ -112,10 +143,10 @@ export const Sidebar = ({ isOpen, setIsOpen }: { isOpen?: boolean, setIsOpen?: (
           <h3 className="text-sm font-bold leading-tight">¿Necesitas ayuda?</h3>
         </div>
         <p className="text-xs text-gray-400 mb-4 leading-relaxed">
-          Publica maquetas, resúmenes o proyectos y conecta con estudiantes.
+          Publica tareas, becas o proyectos y conecta con más personas.
         </p>
         <NavLink 
-          to="/publish"
+          to="/publish?type=TAREA"
           className="w-full bg-brand-primary hover:bg-brand-primary-hover text-white text-sm font-bold py-2.5 rounded-xl transition-colors flex items-center justify-center gap-2"
         >
           Publicar ahora
