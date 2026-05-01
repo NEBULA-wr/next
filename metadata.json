@@ -1,0 +1,6 @@
+{
+  "name": "SchoolTasker",
+  "description": "Una plataforma para conectar a estudiantes que necesitan ayuda con tareas, maquetas o proyectos, con otros estudiantes dispuestos a realizarlos por un precio.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
